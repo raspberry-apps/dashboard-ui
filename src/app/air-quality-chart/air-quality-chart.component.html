@@ -1,1 +1,17 @@
-<div [chart]="chart"></div>
+<div class="row">
+  <div class="col">
+    <div class="btn-group" dropdown>
+      <button dropdownToggle type="button" class="btn dropdown-toggle">
+        {{range}} <span class="caret"></span>
+      </button>
+      <ul *dropdownMenu class="dropdown-menu" role="menu">
+        <li role="menuitem"><a class="dropdown-item" [routerLink]="['/sensors/', 'day']">Last Day</a></li>
+        <li role="menuitem"><a class="dropdown-item" [routerLink]="['/sensors/', 'week']">Last Week</a></li>
+        <li role="menuitem"><a class="dropdown-item" [routerLink]="['/sensors/', 'month']">Last Month</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div [chart]="chart" class="w-100"></div>
+</div>

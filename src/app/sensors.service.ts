@@ -10,8 +10,12 @@ export class SensorsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getAirQuality(){
-    return this.httpClient.get<AirQuality[]>('http://192.168.0.110:5000/');
+  public getAirQuality() {
+    return this.httpClient.get<AirQuality[]>('http://htpc.local:5000/');
+  }
+
+  public getAirQualityDayRange(days: number) {
+    return this.httpClient.get<AirQuality[]>(`http://htpc.local:5000/days/${days}`);
   }
 
 }
